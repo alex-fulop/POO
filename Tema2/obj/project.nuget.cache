@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0/cEM32CH1XnJsliXWMZyk+p5qILzImVpwwSPiVpOmJZcdd0pYnTaX0u5LlMn9P2kETbiHkASuM35qGtfdFrQQ==",
+  "success": true,
+  "projectFilePath": "/home/fulop/Work/Playground/C#/Tema2/Tema2/Tema2.csproj",
+  "expectedPackageFiles": [
+    "/home/fulop/.nuget/packages/morelinq/3.3.2/morelinq.3.3.2.nupkg.sha512"
+  ],
+  "logs": []
+}
