@@ -1,15 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
-using MoreLinq;
 
 namespace Tema2
 {
     public class Produs : ProdusAbstract
     {
-
         private string producator;
 
-        public Produs(string codIntern, string id, string nume, string producator) : base(codIntern, id, nume)
+        public Produs(int id, string nume, string codIntern, string producator) : base(codIntern, id, nume)
         {
             this.producator = producator;
         }
@@ -19,7 +17,7 @@ namespace Tema2
             get => producator;
             set => producator = value;
         }
-        
+
         public override string ToString()
         {
             return base.ToString() + " producator: " + Producator;

@@ -5,10 +5,8 @@ namespace Tema2
 {
     public class Serviciu : ProdusAbstract
     {
-        
-        public Serviciu(string codIntern, string id, string nume) : base(codIntern, id, nume)
+        public Serviciu(int id, string nume, string codIntern) : base(id, nume, codIntern)
         {
-            
         }
 
         public override bool CompareWith(List<ProdusAbstract> elemente)

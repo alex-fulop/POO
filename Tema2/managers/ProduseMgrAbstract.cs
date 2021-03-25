@@ -1,13 +1,13 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using MoreLinq.Extensions;
 
 namespace Tema2
 {
     public abstract class ProduseMgrAbstract
     {
-        public static List<ProdusAbstract> elemente = new List<ProdusAbstract>();
-        
+        ArrayList elemente = new ArrayList();
+
         public abstract ProdusAbstract CitireProdus();
         public abstract void AfisareProduse(List<ProdusAbstract> elemente);
 

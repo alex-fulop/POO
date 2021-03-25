@@ -5,14 +5,14 @@ namespace Tema2
     public abstract class ProdusAbstract
     {
         protected string codIntern;
-        protected string id;
+        protected int id;
         protected string nume;
 
-        protected ProdusAbstract(string codIntern, string id, string nume)
+        protected ProdusAbstract(int id, string nume, string codIntern)
         {
-            this.codIntern = codIntern;
             this.id = id;
             this.nume = nume;
+            this.codIntern = codIntern;
         }
 
         public string CodIntern
@@ -21,7 +21,7 @@ namespace Tema2
             set => codIntern = value;
         }
 
-        public string Id
+        public int Id
         {
             get => id;
             set => id = value;
@@ -32,7 +32,7 @@ namespace Tema2
             get => nume;
             set => nume = value;
         }
-        
+
         public override string ToString()
         {
             return "Serviciu: " + Nume + "[" + CodIntern + "] " + " Id: " + Id;
