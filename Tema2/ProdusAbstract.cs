@@ -1,18 +1,18 @@
+using System.Collections.Generic;
+
 namespace Tema2
 {
-    public class Produs
+    public abstract class ProdusAbstract
     {
-        private string codIntern;
-        private string id;
-        private string nume;
-        private string producator;
+        protected string codIntern;
+        protected string id;
+        protected string nume;
 
-        public Produs(string codIntern, string id, string nume, string producator)
+        protected ProdusAbstract(string codIntern, string id, string nume)
         {
             this.codIntern = codIntern;
             this.id = id;
             this.nume = nume;
-            this.producator = producator;
         }
 
         public string CodIntern
@@ -32,16 +32,12 @@ namespace Tema2
             get => nume;
             set => nume = value;
         }
-
-        public string Producator
-        {
-            get => producator;
-            set => producator = value;
-        }
-
+        
         public override string ToString()
         {
-           return "Produs: " + Nume + "[" + CodIntern + "] " + " producator: " + Producator + " id: " + id;
+            return "Serviciu: " + Nume + "[" + CodIntern + "] " + " Id: " + Id;
         }
+
+        public abstract bool CompareWith(List<ProdusAbstract> elemente);
     }
 }
