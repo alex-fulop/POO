@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System.Linq;
+using Tema2.collections;
 
 namespace Tema2
 {
@@ -9,7 +9,7 @@ namespace Tema2
         {
         }
 
-        public override bool CompareWith(List<ProdusAbstract> elemente)
+        public override bool CompareWith(ColectieTipizata elemente)
         {
             var servicii = elemente.Cast<Serviciu>();
             foreach (Serviciu serviciu in servicii)

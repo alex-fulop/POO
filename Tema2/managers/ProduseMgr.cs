@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using MoreLinq.Extensions;
 
 namespace Tema2
 {
@@ -14,10 +13,10 @@ namespace Tema2
             Console.Write("Numele: ");
             String nume = Console.ReadLine();
             Console.Write("Id: ");
-            String id = Console.ReadLine();
+            int id = Convert.ToInt32(Console.ReadLine());
             Console.Write("Producator:  ");
             String producator = Console.ReadLine();
-            return new Produs(codIntern, id, nume, producator);
+            return new Produs(id, nume, codIntern, producator);
         }
 
         public void CitireProduse(int nrProduse)
@@ -25,11 +24,11 @@ namespace Tema2
             while (nrProduse != 0)
             {
                 Produs produs = (Produs) CitireProdus();
-                if(produs.CompareWith(elemente)) elemente.Add(produs);
+                if (produs.CompareWith(Elemente)) Elemente.Add(produs);
                 nrProduse--;
             }
         }
-        
+
         public override void AfisareProduse(List<ProdusAbstract> produse)
         {
             Console.WriteLine("Produsele sunt:");

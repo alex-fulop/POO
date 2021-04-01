@@ -13,8 +13,8 @@ namespace Tema2
             Console.Write("Numele:");
             String nume = Console.ReadLine();
             Console.Write("Id: ");
-            String id = Console.ReadLine();
-            return new Serviciu(codIntern, id, nume);
+            int id = Convert.ToInt32(Console.ReadLine());
+            return new Serviciu(id, nume, codIntern);
         }
 
         public void CitireServicii(int nrServicii)
@@ -22,7 +22,7 @@ namespace Tema2
             while (nrServicii != 0)
             {
                 Serviciu serviciu = (Serviciu) CitireProdus();
-                if(serviciu.CompareWith(elemente)) elemente.Add(serviciu);
+                if (serviciu.CompareWith(Elemente)) Elemente.Add(serviciu);
                 nrServicii--;
             }
         }

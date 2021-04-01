@@ -14,8 +14,11 @@ namespace Tema2
             Console.WriteLine("Introdu numarul de servicii: ");
             int nrServicii = int.Parse(Console.ReadLine() ?? string.Empty);
 
-            Produs prod1 = new Produs(1, "Produs", "CodProd", "Producator");
-            Serviciu serv1 = new Serviciu(2, "Serviciu", "CodServ");
+            // Produs prod1 = new Produs(1, "Produs", "CodProd", "Producator");
+            // Serviciu serv1 = new Serviciu(2, "Serviciu", "CodServ");
+
+            // ProduseMgr.elemente.Add(prod1);
+            // ProduseMgr.elemente.Add(serv1);
 
             ProduseMgr.CitireProduse(nrProduse);
             ServiciiMgr.CitireServicii(nrServicii);

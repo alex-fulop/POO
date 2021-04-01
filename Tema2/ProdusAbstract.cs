@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using Tema2.collections;
 
 namespace Tema2
 {
@@ -38,6 +38,6 @@ namespace Tema2
             return "Serviciu: " + Nume + "[" + CodIntern + "] " + " Id: " + Id;
         }
 
-        public abstract bool CompareWith(List<ProdusAbstract> elemente);
+        public abstract bool CompareWith(ColectieTipizata elemente);
     }
 }

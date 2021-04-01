@@ -1,20 +1,22 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using Tema2.collections;
 
 namespace Tema2
 {
     public abstract class ProduseMgrAbstract
     {
-        ArrayList elemente = new ArrayList();
+        private ColectieTipizata elemente = new ColectieTipizata();
+
+        public ColectieTipizata Elemente => elemente;
 
         public abstract ProdusAbstract CitireProdus();
         public abstract void AfisareProduse(List<ProdusAbstract> elemente);
 
         public void Write2Console()
         {
+            elemente.Sort();
             Console.WriteLine("Produsele si serviciile sunt:");
-            elemente.DistinctBy(x => new {x.Id, x.Nume, x.CodIntern}).ForEach(Console.WriteLine);
         }
     }
 }

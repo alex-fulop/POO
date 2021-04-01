@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System.Linq;
+using Tema2.collections;
 
 namespace Tema2
 {
@@ -7,7 +7,7 @@ namespace Tema2
     {
         private string producator;
 
-        public Produs(int id, string nume, string codIntern, string producator) : base(codIntern, id, nume)
+        public Produs(int id, string nume, string codIntern, string producator) : base(id, nume, codIntern)
         {
             this.producator = producator;
         }
@@ -23,7 +23,7 @@ namespace Tema2
             return base.ToString() + " producator: " + Producator;
         }
 
-        public override bool CompareWith(List<ProdusAbstract> elemente)
+        public override bool CompareWith(ColectieTipizata elemente)
         {
             var produse = elemente.Cast<Produs>();
             foreach (Produs produs in produse)
