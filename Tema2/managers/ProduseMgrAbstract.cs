@@ -16,7 +16,11 @@ namespace Tema2
         public void Write2Console()
         {
             elemente.Sort();
-            Console.WriteLine("Produsele si serviciile sunt:");
+            Console.WriteLine("Produsele si serviciile sunt: ");
+            foreach (var element in elemente.GetInnerList())
+            {
+                Console.WriteLine(element);
+            }
         }
     }
 }

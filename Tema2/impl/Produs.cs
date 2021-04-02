@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Tema2.collections;
 
@@ -25,7 +26,7 @@ namespace Tema2
 
         public override bool CompareWith(ColectieTipizata elemente)
         {
-            var produse = elemente.Cast<Produs>();
+            IEnumerable<Produs> produse = elemente.Cast<Produs>();
             foreach (Produs produs in produse)
             {
                 if (Equals(produs)) return false;

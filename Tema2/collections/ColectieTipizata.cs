@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Tema2.utils;
 
 namespace Tema2.collections
 {
@@ -11,7 +13,13 @@ namespace Tema2.collections
 
         public void Sort()
         {
-            InnerList.Sort();
+            Console.WriteLine("Se sorteaza produsele si serviciile dupa id...");
+            InnerList.Sort(new IdComparer());
+        }
+
+        public ArrayList GetInnerList()
+        {
+            return InnerList;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Tema2.collections;
 
@@ -11,7 +12,7 @@ namespace Tema2
 
         public override bool CompareWith(ColectieTipizata elemente)
         {
-            var servicii = elemente.Cast<Serviciu>();
+            IEnumerable<Serviciu> servicii = elemente.Cast<Serviciu>();
             foreach (Serviciu serviciu in servicii)
             {
                 if (Equals(serviciu)) return false;

@@ -14,7 +14,7 @@ namespace Tema2
             String nume = Console.ReadLine();
             Console.Write("Id: ");
             int id = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Producator:  ");
+            Console.Write("Producator: ");
             String producator = Console.ReadLine();
             return new Produs(id, nume, codIntern, producator);
         }
