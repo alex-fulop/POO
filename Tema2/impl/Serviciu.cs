@@ -5,7 +5,8 @@ namespace Tema2
 {
     public class Serviciu : ProdusAbstract
     {
-        public Serviciu(int id, string nume, string codIntern) : base(id, nume, codIntern)
+        public Serviciu(int id, string nume, string codIntern, decimal pret, string categorie) : base(id, nume,
+            codIntern, pret, categorie)
         {
         }
 

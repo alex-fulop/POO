@@ -7,7 +7,8 @@ namespace Tema2
     {
         private string producator;
 
-        public Produs(int id, string nume, string codIntern, string producator) : base(id, nume, codIntern)
+        public Produs(int id, string nume, string codIntern, string producator, decimal pret, string categorie) : base(
+            id, nume, codIntern, pret, categorie)
         {
             this.producator = producator;
         }

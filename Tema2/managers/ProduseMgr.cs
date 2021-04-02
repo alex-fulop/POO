@@ -17,7 +17,11 @@ namespace Tema2
             int id = Convert.ToInt32(Console.ReadLine());
             Console.Write("Producator:  ");
             String producator = Console.ReadLine();
-            return new Produs(id, nume, codIntern, producator);
+            Console.Write("Codul intern: ");
+            decimal pret = Convert.ToDecimal(Console.ReadLine());
+            Console.Write("Ctegorie: ");
+            String categorie = Console.ReadLine();
+            return new Produs(id, nume, codIntern, producator, pret, categorie);
         }
 
         public void CitireProduse(int nrProduse)

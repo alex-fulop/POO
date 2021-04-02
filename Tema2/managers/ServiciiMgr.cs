@@ -8,13 +8,17 @@ namespace Tema2
         public override ProdusAbstract CitireProdus()
         {
             Console.WriteLine("----------- Introdu un serviciu -----------");
-            Console.Write("Codul intern:");
+            Console.Write("Codul intern: ");
             String codIntern = Console.ReadLine();
-            Console.Write("Numele:");
+            Console.Write("Numele: ");
             String nume = Console.ReadLine();
             Console.Write("Id: ");
             int id = Convert.ToInt32(Console.ReadLine());
-            return new Serviciu(id, nume, codIntern);
+            Console.Write("Pret: ");
+            decimal pret = Convert.ToDecimal(Console.ReadLine());
+            Console.Write("Categorie ");
+            String categorie = Console.ReadLine();
+            return new Serviciu(id, nume, codIntern, pret, categorie);
         }
 
         public void CitireServicii(int nrServicii)
