@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<produse>
+    <Produs>
+        <Nume>Calculator</Nume>
+        <CodIntern>157235</CodIntern>
+        <Producator>USA</Producator>
+        <Pret>2200</Pret>
+        <Categorie>Tehnologia Informatiei</Categorie>
+    </Produs>
+    <Produs>
+        <Nume>Smartphone</Nume>
+        <CodIntern>157236</CodIntern>
+        <Producator>China</Producator>
+        <Pret>3100</Pret>
+        <Categorie>Tehnologia Informatiei</Categorie>
+    </Produs>
+    <Serviciu>
+        <Nume>Instalare OS</Nume>
+        <CodIntern>157237</CodIntern>
+        <Pret>700</Pret>
+        <Categorie>Tehnologia Informatiei</Categorie>
+    </Serviciu>
+</produse>
