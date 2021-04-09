@@ -20,8 +20,10 @@ namespace Tema2
             // ProduseMgr.elemente.Add(prod1);
             // ProduseMgr.elemente.Add(serv1);
 
-            ProduseMgr.CitireProduse(nrProduse);
-            ServiciiMgr.CitireServicii(nrServicii);
+            // ProduseMgr.CitireProduse(nrProduse);
+            // ServiciiMgr.CitireServicii(nrServicii);
+            ProduseMgr.CitireProduse();
+            ServiciiMgr.CitireServicii();
 
             Console.WriteLine();
             ProduseMgr.Write2Console();

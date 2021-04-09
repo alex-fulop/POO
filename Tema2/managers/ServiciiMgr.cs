@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace Tema2
 {
@@ -29,6 +30,36 @@ namespace Tema2
                 if (serviciu.CompareWith(Elemente)) Elemente.Add(serviciu);
                 nrServicii--;
             }
+        }
+
+        public void CitireServicii()
+        {
+            var listaNoduri = GetListaNoduri();
+            foreach (XmlNode nod in listaNoduri)
+            {
+                var serviciu = GetServiciu(nod);
+                if (serviciu.CompareWith(Elemente)) Elemente.Add(serviciu);
+            }
+        }
+
+        private Serviciu GetServiciu(XmlNode nod)
+        {
+            string nume = nod["Nume"].InnerText;
+            string codIntern = nod["CodIntern"].InnerText;
+            string producator = nod["Producator"].InnerText;
+            int pret = int.Parse(nod["Pret"].InnerText);
+            string categorie = nod["Categorie"].InnerText;
+            int id = Elemente.Count + 1;
+            Serviciu serviciu = new Serviciu(id, nume, codIntern, pret, categorie);
+            return serviciu;
+        }
+
+        private static XmlNodeList GetListaNoduri()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("Produse.xml");
+            XmlNodeList listaNoduri = doc.SelectNodes("/produse/Serviciu"); //Maybe check for null
+            return listaNoduri;
         }
 
         public override void AfisareProduse(List<ProdusAbstract> servicii)
