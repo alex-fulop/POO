@@ -1,21 +1,22 @@
+using System;
 using System.Linq;
 using Tema2.collections;
 
 namespace Tema2
 {
-    public class Produs : ProdusAbstract
+    public class Produs : ProdusAbstract, IPackageable
     {
-        private string producator;
-
-        public Produs(int id, string nume, string codIntern, string producator) : base(id, nume, codIntern)
+        public Produs(int id, string nume, string codIntern, string producator, decimal pret, string categorie) : base(
+            id, nume, codIntern, pret, categorie)
         {
-            this.producator = producator;
+            this.Producator = producator;
         }
 
-        public string Producator
+        public string Producator { get; set; }
+
+        public bool canAddToPackage(Pachet pachet)
         {
-            get => producator;
-            set => producator = value;
+            throw new NotImplementedException();
         }
 
         public override string ToString()
@@ -23,13 +24,17 @@ namespace Tema2
             return base.ToString() + " producator: " + Producator;
         }
 
+        public override string Descriere()
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool CompareWith(ColectieTipizata elemente)
         {
             var produse = elemente.Cast<Produs>();
-            foreach (Produs produs in produse)
-            {
-                if (Equals(produs)) return false;
-            }
+            foreach (var produs in produse)
+                if (Equals(produs))
+                    return false;
 
             return true;
         }
@@ -42,7 +47,7 @@ namespace Tema2
             if (id == produs.id &&
                 nume == produs.nume &&
                 codIntern == produs.codIntern &&
-                producator == produs.producator
+                Producator == produs.Producator
             ) return true;
             return false;
         }
