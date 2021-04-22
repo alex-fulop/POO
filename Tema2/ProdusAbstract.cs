@@ -54,6 +54,8 @@ namespace Tema2
             return "Serviciu: " + Nume + "[" + CodIntern + "] " + " Id: " + Id;
         }
 
+        public abstract string Descriere();
+
         public abstract bool CompareWith(ColectieTipizata elemente);
     }
 }

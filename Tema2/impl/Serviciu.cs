@@ -1,22 +1,32 @@
+using System;
 using System.Linq;
 using Tema2.collections;
 
 namespace Tema2
 {
-    public class Serviciu : ProdusAbstract
+    public class Serviciu : ProdusAbstract, IPackageable
     {
         public Serviciu(int id, string nume, string codIntern, decimal pret, string categorie) : base(id, nume,
             codIntern, pret, categorie)
         {
         }
 
+        public bool canAddToPackage(Pachet pachet)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string Descriere()
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool CompareWith(ColectieTipizata elemente)
         {
             var servicii = elemente.Cast<Serviciu>();
-            foreach (Serviciu serviciu in servicii)
-            {
-                if (Equals(serviciu)) return false;
-            }
+            foreach (var serviciu in servicii)
+                if (Equals(serviciu))
+                    return false;
 
             return true;
         }

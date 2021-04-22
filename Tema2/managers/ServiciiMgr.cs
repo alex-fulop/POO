@@ -10,15 +10,15 @@ namespace Tema2
         {
             Console.WriteLine("----------- Introdu un serviciu -----------");
             Console.Write("Codul intern: ");
-            String codIntern = Console.ReadLine();
+            var codIntern = Console.ReadLine();
             Console.Write("Numele: ");
-            String nume = Console.ReadLine();
+            var nume = Console.ReadLine();
             Console.Write("Id: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+            var id = Convert.ToInt32(Console.ReadLine());
             Console.Write("Pret: ");
-            decimal pret = Convert.ToDecimal(Console.ReadLine());
+            var pret = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Categorie ");
-            String categorie = Console.ReadLine();
+            var categorie = Console.ReadLine();
             return new Serviciu(id, nume, codIntern, pret, categorie);
         }
 
@@ -26,7 +26,7 @@ namespace Tema2
         {
             while (nrServicii != 0)
             {
-                Serviciu serviciu = (Serviciu) CitireProdus();
+                var serviciu = (Serviciu) CitireProdus();
                 if (serviciu.CompareWith(Elemente)) Elemente.Add(serviciu);
                 nrServicii--;
             }
@@ -44,21 +44,20 @@ namespace Tema2
 
         private Serviciu GetServiciu(XmlNode nod)
         {
-            string nume = nod["Nume"].InnerText;
-            string codIntern = nod["CodIntern"].InnerText;
-            string producator = nod["Producator"].InnerText;
-            int pret = int.Parse(nod["Pret"].InnerText);
-            string categorie = nod["Categorie"].InnerText;
-            int id = Elemente.Count + 1;
-            Serviciu serviciu = new Serviciu(id, nume, codIntern, pret, categorie);
+            var nume = nod["Nume"].InnerText;
+            var codIntern = nod["CodIntern"].InnerText;
+            var pret = int.Parse(nod["Pret"].InnerText);
+            var categorie = nod["Categorie"].InnerText;
+            var id = Elemente.Count + 1;
+            var serviciu = new Serviciu(id, nume, codIntern, pret, categorie);
             return serviciu;
         }
 
         private static XmlNodeList GetListaNoduri()
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("Produse.xml");
-            XmlNodeList listaNoduri = doc.SelectNodes("/produse/Serviciu"); //Maybe check for null
+            var doc = new XmlDocument();
+            doc.Load("resources/produse.xml");
+            var listaNoduri = doc.SelectNodes("/produse/Serviciu"); //Maybe check for null
             return listaNoduri;
         }
 

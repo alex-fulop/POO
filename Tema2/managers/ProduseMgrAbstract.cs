@@ -6,17 +6,16 @@ namespace Tema2
 {
     public abstract class ProduseMgrAbstract
     {
-        private ColectieTipizata elemente = new ColectieTipizata();
-
-        public ColectieTipizata Elemente => elemente;
+        public ColectieTipizata Elemente { get; } = new();
 
         public abstract ProdusAbstract CitireProdus();
         public abstract void AfisareProduse(List<ProdusAbstract> elemente);
 
         public void Write2Console()
         {
-            elemente.Sort();
+            // elemente.Sort();
             Console.WriteLine("Produsele si serviciile sunt:");
+            foreach (var element in Elemente) Console.WriteLine(element);
         }
     }
 }

@@ -2,17 +2,14 @@
 
 namespace Tema2
 {
-    class Program
+    internal class Program
     {
-        private static readonly ProduseMgr ProduseMgr = new ProduseMgr();
-        private static readonly ServiciiMgr ServiciiMgr = new ServiciiMgr();
+        private static readonly ProduseMgr ProduseMgr = new();
+        private static readonly ServiciiMgr ServiciiMgr = new();
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Introdu numarul de produse: ");
-            int nrProduse = int.Parse(Console.ReadLine() ?? string.Empty);
-            Console.WriteLine("Introdu numarul de servicii: ");
-            int nrServicii = int.Parse(Console.ReadLine() ?? string.Empty);
+            // ReadUserInput();
 
             // Produs prod1 = new Produs(1, "Produs", "CodProd", "Producator");
             // Serviciu serv1 = new Serviciu(2, "Serviciu", "CodServ");
@@ -20,13 +17,22 @@ namespace Tema2
             // ProduseMgr.elemente.Add(prod1);
             // ProduseMgr.elemente.Add(serv1);
 
-            // ProduseMgr.CitireProduse(nrProduse);
-            // ServiciiMgr.CitireServicii(nrServicii);
             ProduseMgr.CitireProduse();
             ServiciiMgr.CitireServicii();
 
             Console.WriteLine();
             ProduseMgr.Write2Console();
+        }
+
+        private static void ReadUserInput()
+        {
+            Console.WriteLine("Introdu numarul de produse: ");
+            var nrProduse = int.Parse(Console.ReadLine() ?? string.Empty);
+            Console.WriteLine("Introdu numarul de servicii: ");
+            var nrServicii = int.Parse(Console.ReadLine() ?? string.Empty);
+
+            ProduseMgr.CitireProduse(nrProduse);
+            ServiciiMgr.CitireServicii(nrServicii);
         }
     }
 }
