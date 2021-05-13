@@ -1,13 +1,20 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using Tema2.collections;
+using System.Xml.Serialization;
 
 namespace Tema2
 {
+    [Serializable]
+    [XmlRoot("Serviciu")]
     public class Serviciu : ProdusAbstract, IPackageable
     {
         public Serviciu(int id, string nume, string codIntern, decimal pret, string categorie) : base(id, nume,
             codIntern, pret, categorie)
+        {
+        }
+
+        public Serviciu()
         {
         }
 
@@ -18,10 +25,10 @@ namespace Tema2
 
         public override string Descriere()
         {
-            throw new NotImplementedException();
+            return "Aceasta entitate este un serviciu";
         }
 
-        public override bool CompareWith(ColectieTipizata elemente)
+        public override bool CompareWith(List<ProdusAbstract> elemente)
         {
             var servicii = elemente.Cast<Serviciu>();
             foreach (var serviciu in servicii)
@@ -42,5 +49,18 @@ namespace Tema2
             ) return true;
             return false;
         }
+
+        public override string ToString()
+        {
+            return "Serviciu: " + base.ToString();
+        }
+
+        // public void save2File(string fileName)
+        // {
+        //     FileStream fs = new FileStream(fileName, FileMode.Create);
+        //     BinaryFormatter formatter = new BinaryFormatter();
+        //     formatter.Serialize(fs, this.Elemente);
+        //     fs.Close();
+        // }
     }
 }

@@ -1,14 +1,25 @@
-using Tema2.collections;
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Tema2
 {
+    [Serializable]
     public abstract class ProdusAbstract
     {
+        [XmlAttribute(AttributeName = "Categorie")]
         protected string categorie;
+
+        [XmlAttribute(AttributeName = "CodIntern")]
         protected string codIntern;
-        protected int id;
-        protected string nume;
-        protected decimal pret;
+
+        [XmlAttribute(AttributeName = "Id")] protected int id;
+        [XmlAttribute(AttributeName = "Nume")] protected string nume;
+        [XmlAttribute(AttributeName = "Pret")] protected decimal pret;
+
+        protected ProdusAbstract()
+        {
+        }
 
         protected ProdusAbstract(int id, string nume, string codIntern, decimal pret, string categorie)
         {
@@ -51,11 +62,11 @@ namespace Tema2
 
         public override string ToString()
         {
-            return "Serviciu: " + Nume + "[" + CodIntern + "] " + " Id: " + Id;
+            return Nume + "[" + CodIntern + "] " + " Id: " + Id;
         }
 
         public abstract string Descriere();
 
-        public abstract bool CompareWith(ColectieTipizata elemente);
+        public abstract bool CompareWith(List<ProdusAbstract> elemente);
     }
 }

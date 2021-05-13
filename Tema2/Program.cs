@@ -20,8 +20,16 @@ namespace Tema2
             ProduseMgr.CitireProduse();
             ServiciiMgr.CitireServicii();
 
+            // Deserialize
+            var produseAbstracte = ServiciiMgr.loadFromXML("resources/produse");
+            foreach (var produsAbstract in produseAbstracte) Console.WriteLine(produsAbstract);
+
+            // Serialize 
+            // if (ServiciiMgr.Elemente[0] is Serviciu) 
+            //     ServiciiMgr.save2XML("result");
+
             Console.WriteLine();
-            ProduseMgr.Write2Console();
+            // ProduseMgr.Write2Console();
         }
 
         private static void ReadUserInput()

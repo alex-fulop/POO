@@ -9,6 +9,11 @@ namespace Tema2.collections
             InnerList.Add(produs);
         }
 
+        public ProdusAbstract FindFirst()
+        {
+            return (ProdusAbstract) InnerList[0];
+        }
+
         public void Sort()
         {
             InnerList.Sort();

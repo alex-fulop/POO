@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<produse>
+<ProdusRoot>
     <Produs>
+        <Id>1</Id>
         <Nume>Calculator</Nume>
         <CodIntern>157235</CodIntern>
         <Producator>USA</Producator>
@@ -8,6 +9,7 @@
         <Categorie>Tehnologia Informatiei</Categorie>
     </Produs>
     <Produs>
+        <Id>2</Id>
         <Nume>Smartphone</Nume>
         <CodIntern>157236</CodIntern>
         <Producator>China</Producator>
@@ -15,9 +17,18 @@
         <Categorie>Tehnologia Informatiei</Categorie>
     </Produs>
     <Serviciu>
+        <Id>3</Id>
         <Nume>Instalare OS</Nume>
         <CodIntern>157237</CodIntern>
         <Pret>700</Pret>
         <Categorie>Tehnologia Informatiei</Categorie>
     </Serviciu>
-</produse>
+    <Pachet>
+        <Id>4</Id>
+        <Nume>Pachet Smartware</Nume>
+        <CodIntern>157239</CodIntern>
+        <Producator>China</Producator>
+        <Pret>6700</Pret>
+        <Categorie>Software</Categorie>
+    </Pachet>
+</ProdusRoot>

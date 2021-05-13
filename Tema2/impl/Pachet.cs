@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Tema2.collections;
+using System.Linq;
+using System.Xml.Serialization;
 
 namespace Tema2
 {
+    [Serializable]
+    [XmlRoot("Pachet")]
     public class Pachet : ProdusAbstract, IPackageable
     {
         private readonly List<IPackageable> elem_pachet = new();
@@ -13,14 +16,13 @@ namespace Tema2
         {
         }
 
+        public Pachet()
+        {
+        }
+
         public bool canAddToPackage(Pachet pachet)
         {
             return false;
-        }
-
-        public override bool CompareWith(ColectieTipizata elemente)
-        {
-            throw new NotImplementedException();
         }
 
         public void addElement(IPackageable prod)
@@ -38,6 +40,21 @@ namespace Tema2
             }
 
             return "Pachetul contine" + desc;
+        }
+
+        public override bool CompareWith(List<ProdusAbstract> elemente)
+        {
+            var pachete = elemente.Cast<Pachet>();
+            foreach (var pachet in pachete)
+                if (Equals(pachet))
+                    return false;
+
+            return true;
+        }
+
+        public override string ToString()
+        {
+            return "Pachet: " + base.ToString();
         }
     }
 }

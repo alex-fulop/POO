@@ -1,15 +1,22 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using Tema2.collections;
+using System.Xml.Serialization;
 
 namespace Tema2
 {
+    [Serializable]
+    [XmlRoot("Produs")]
     public class Produs : ProdusAbstract, IPackageable
     {
         public Produs(int id, string nume, string codIntern, string producator, decimal pret, string categorie) : base(
             id, nume, codIntern, pret, categorie)
         {
-            this.Producator = producator;
+            Producator = producator;
+        }
+
+        public Produs()
+        {
         }
 
         public string Producator { get; set; }
@@ -21,7 +28,7 @@ namespace Tema2
 
         public override string ToString()
         {
-            return base.ToString() + " producator: " + Producator;
+            return "Produs: " + base.ToString() + " producator: " + Producator;
         }
 
         public override string Descriere()
@@ -29,7 +36,7 @@ namespace Tema2
             throw new NotImplementedException();
         }
 
-        public override bool CompareWith(ColectieTipizata elemente)
+        public override bool CompareWith(List<ProdusAbstract> elemente)
         {
             var produse = elemente.Cast<Produs>();
             foreach (var produs in produse)

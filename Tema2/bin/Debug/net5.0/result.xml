@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProdusAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProdusAbstract xsi:type="Serviciu">
+    <CodIntern>157237</CodIntern>
+    <Id>1</Id>
+    <Nume>Instalare OS</Nume>
+    <Pret>700</Pret>
+    <Categorie>Tehnologia Informatiei</Categorie>
+  </ProdusAbstract>
+</ArrayOfProdusAbstract>
